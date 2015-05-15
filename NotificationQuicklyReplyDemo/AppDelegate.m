@@ -62,9 +62,9 @@
     }
 }
 
-
 - (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)())completionHandler
 {
+    //通过identifier来判断点击的是哪个按钮，然后执行对应的操作
     NSArray *arr = [[[NSUserDefaults standardUserDefaults] valueForKey:@"reply"] copy];
     for (NSInteger i = 0; i < arr.count ; i ++) {
         if ([identifier isEqualToString:[NSString stringWithFormat:@"quickReply%ld",i]]) {
